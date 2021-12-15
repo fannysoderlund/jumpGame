@@ -17,21 +17,8 @@ function jump() {
     }, 600);
 }
 
-function changeCharacter(src) {
-    character.src = src;
-    if (localStorage.getItem("character") != null) {
-        localStorage.setItem("character", src);
-    }
-    
-}
 
 setInterval(function () {
-    if (counter === 0) {
-        if (localStorage.getItem("character") != null) {
-            character.src = localStorage.getItem("character");
-        }
-    
-    }
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     if (blockLeft < 20 && blockLeft > -20 && characterTop >= 250) {
